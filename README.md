@@ -1,21 +1,29 @@
 # Flac
 
-**TODO: Add description**
+Parses a FLAC file metadata.
+
+### Examples
+
+  ```elixir
+  iex> {:ok, metadata} = FlacParser.parse "test/data/test.flac"
+  iex> Map.keys metadata
+  [:album, :albumartist, :artist, :comment, :composer, :date,
+ :discnumber, :disctotal, :encoder, :genre, :performer,
+ :pictures, :replaygain_album_peak, :replaygain_track_peak,
+ :streaminfo, :title, :tracknumber, :tracktotal]
+  iex> metadata.album
+  "Album Test"
+  ```
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `flac` to your list of dependencies in `mix.exs`:
+The package can be installed by adding `flac_parser` to your list of
+dependencies in `mix.exs`:
 
 ```elixir
 def deps do
   [
-    {:flac, "~> 0.1.0"}
+    {:flac_parser, "~> 0.1.0"}
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/flac](https://hexdocs.pm/flac).
-
