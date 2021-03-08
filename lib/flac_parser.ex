@@ -160,7 +160,7 @@ defmodule FlacParser do
       data           :: binary
     >> = binary
 
-    [key, value] = String.split(user_comment, "=")
+    [key, value] = String.split(user_comment, "=", parts: 2)
     comments = [[key, value] | comments]
 
     if length(comments) == total_comments do
